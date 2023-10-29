@@ -12,7 +12,7 @@ import { FieldText } from '@/components/field/FieldText';
 import { LayoutPage } from '@/components/layout-page/LayoutPage';
 import { MIN_PASSWORD_LENGTH, URL_APP_STATIC } from '@/constants/app';
 import { STATE, State } from '@/constants/common';
-import { SignupInput, authControllerLogin } from '@/orval/api';
+import { SignupInput, authControllerSignup } from '@/orval/api';
 import { atomTokens, atomUser } from '@/recoil/atom';
 import { UserAfterSignup } from '@/types/api';
 
@@ -38,7 +38,7 @@ export default function PageSignup() {
 
   function onSubmit(data: SignupInput) {
     setState(STATE.LOADING);
-    authControllerLogin(data)
+    authControllerSignup(data)
       .then((res) => {
         setTokens((old) => ({
           ...old,
