@@ -4,18 +4,19 @@ import dayjs from 'dayjs';
 
 import { Button } from '@/components/button/Button';
 import { Chip } from '@/components/chip/Chip';
+import { PostList } from '@/components/post-list/PostList';
 import { URL_APP_STATIC } from '@/constants/app';
-import { IconBook } from '@/icons/IconBook';
+import { STATE, State } from '@/constants/common';
+import { IconHash } from '@/icons/IconHash';
+import { IconEmail } from '@/icons/IconEmail';
 import { IconTime } from '@/icons/IconTime';
 import { IconUser } from '@/icons/IconUser';
 import { PostResponse, postsControllerUserPosts } from '@/orval/api';
-import { User, UserAfterSignup } from '@/types/api';
-import { isUserWithId } from '@/utils/typeGuards';
 import { useResetTokens } from '@/recoil/utils';
 import { useRecoilValue } from 'recoil';
 import { atomTokens } from '@/recoil/atom';
-import { STATE, State } from '@/constants/common';
-import { PostList } from '@/components/post-list/PostList';
+import { User, UserAfterSignup } from '@/types/api';
+import { isUserWithId } from '@/utils/typeGuards';
 
 export function UserWithData(props: { user: User | UserAfterSignup }) {
   const [posts, setPosts] = useState<null | PostResponse[]>(null);
@@ -43,14 +44,17 @@ export function UserWithData(props: { user: User | UserAfterSignup }) {
     <div className="flex flex-col gap-8">
       <ul className="mb-4">
         <li className="py-2 border-b">
-          <Chip icon={<IconUser />}>{props.user.email}</Chip>
+          <Chip icon={<IconEmail />}>{props.user.email}</Chip>
         </li>
         <li className="py-2 border-b">
-          <Chip icon={<IconBook />}>
+          <Chip icon={<IconUser />}>
             {props.user.firstname || props.user.lastname
               ? [props.user.firstname, props.user.lastname].filter(Boolean).join(' ')
               : '---'}
           </Chip>
+        </li>
+        <li className="py-2 border-b">
+          <Chip icon={<IconHash />}>{userId || '---'}</Chip>
         </li>
         <li className="py-2 border-b">
           <Chip icon={<IconTime />}>
