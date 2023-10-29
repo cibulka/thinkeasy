@@ -1,9 +1,10 @@
 import { LayoutPage } from '@/components/layout-page/LayoutPage';
 import { PostList } from '@/components/post-list/PostList';
+import { MS_REVALIDATE_FETCH } from '@/constants/app';
 import { STATE } from '@/constants/common';
 import { postsControllerGetAllPosts } from '@/orval/api';
 
-export const revalidate = 60;
+export const revalidate = MS_REVALIDATE_FETCH;
 
 export default async function PageUser(props: { params: { id: string } }) {
   const { id } = props.params;

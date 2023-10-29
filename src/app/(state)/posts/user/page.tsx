@@ -1,9 +1,10 @@
 import { AuthorsList } from '@/components/authors-list/AuthorsList';
 import { LayoutPage } from '@/components/layout-page/LayoutPage';
+import { MS_REVALIDATE_FETCH } from '@/constants/app';
 import { PostResponse, postsControllerGetAllPosts } from '@/orval/api';
 import { Author } from '@/types/app';
 
-export const revalidate = 60;
+export const revalidate = MS_REVALIDATE_FETCH;
 
 function postsToAuthors(posts: PostResponse[]) {
   let result: Author[] = [];

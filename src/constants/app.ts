@@ -29,3 +29,5 @@ export const SESSION_STORAGE = {
 export const MIN_PASSWORD_LENGTH = 8;
 
 export const MS_REFRESH_TOKEN_INTERVAL = 60 * 1000;
+
+export const MS_REVALIDATE_FETCH = 1;

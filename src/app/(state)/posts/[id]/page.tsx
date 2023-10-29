@@ -5,8 +5,9 @@ import { postsControllerGetAllPosts, postsControllerPost } from '@/orval/api';
 import { PostListItemFooter } from '@/components/post-list-item-footer/PostListItemFooter';
 import { PostList } from '@/components/post-list/PostList';
 import { STATE } from '@/constants/common';
+import { MS_REVALIDATE_FETCH } from '@/constants/app';
 
-export const revalidate = 60;
+export const revalidate = MS_REVALIDATE_FETCH;
 
 export default async function PagePost(props: { params: { id: string } }) {
   const { id } = props.params;
