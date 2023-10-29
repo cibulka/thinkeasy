@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply bg-neutral-100 text-neutral-800;
+}
+
+svg {
+  @apply fill-current;
+}
+
+#app {
+  @apply flex justify-center;
+  @apply min-h-screen;
+}
+
+input[type='text'],
+input[type='password'],
+textarea {
+  @apply bg-white p-2 rounded-md;
+  @apply outline outline-neutral-300;
+}
+
+input[type='text']:focus,
+input[type='password']:focus,
+textarea {
+  @apply outline-blue-500;
+}
+
+input[aria-invalid='true'] {
+  @apply outline-red-500;
+}

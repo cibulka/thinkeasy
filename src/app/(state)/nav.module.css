@@ -1,0 +1,36 @@
+.nav {
+  @apply flex bg-neutral-200;
+  @apply sticky top-0 z-20;
+}
+
+@screen lg {
+  .nav {
+    @apply flex-col gap-12;
+    @apply h-screen overflow-auto py-12;
+  }
+  .nav header {
+    @apply px-4;
+  }
+  .menu {
+    @apply border-t border-t-neutral-300;
+  }
+  .menu li {
+    @apply border-b border-b-neutral-300 px-1;
+  }
+}
+
+@screen lgMax {
+  .nav {
+    @apply -ml-4 -mr-4;
+  }
+  .menu {
+    @apply flex w-full;
+  }
+  .menu li {
+    @apply flex-1;
+  }
+  .menu a {
+    @apply flex flex-col items-center justify-center gap-1;
+    @apply text-xs font-semibold tracking-wider;
+  }
+}

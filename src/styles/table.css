@@ -1,0 +1,26 @@
+.table {
+  @apply w-full;
+}
+
+.table th {
+  @apply text-left;
+}
+
+.table th,
+.table td {
+  @apply scroll-px-24 py-1 border-b;
+}
+
+.table th:first-child,
+.table td:first-child {
+  @apply w-full relative;
+}
+
+.table th:first-child,
+.table td:first-child {
+  @apply pr-4;
+}
+.table th:last-child,
+.table td:last-child {
+  @apply pr-4;
+}
