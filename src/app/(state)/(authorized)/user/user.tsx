@@ -12,9 +12,9 @@ import { IconEmail } from '@/icons/IconEmail';
 import { IconTime } from '@/icons/IconTime';
 import { IconUser } from '@/icons/IconUser';
 import { PostResponse, postsControllerUserPosts } from '@/orval/api';
-import { useResetTokens } from '@/recoil/utils';
 import { useRecoilValue } from 'recoil';
 import { atomTokens } from '@/recoil/atom';
+import { useLogout } from '@/recoil/utils';
 import { User, UserAfterSignup } from '@/types/api';
 import { isUserWithId } from '@/utils/typeGuards';
 
@@ -23,7 +23,7 @@ export function UserWithData(props: { user: User | UserAfterSignup }) {
   const [postsState, setPostsState] = useState<State>(STATE.IDLE);
 
   const { accessToken } = useRecoilValue(atomTokens);
-  const resetTokens = useResetTokens();
+  const logout = useLogout();
   const userWithId = isUserWithId(props.user) ? props.user : null;
   const userId = userWithId?.id;
 
@@ -65,7 +65,7 @@ export function UserWithData(props: { user: User | UserAfterSignup }) {
 
       <div className="flex gap-4 justify-between">
         <Button href={URL_APP_STATIC.CREATE}>Create new post</Button>
-        <Button variant="danger" onClick={resetTokens}>
+        <Button variant="danger" onClick={logout}>
           Logout
         </Button>
       </div>
@@ -79,7 +79,7 @@ export function UserWithData(props: { user: User | UserAfterSignup }) {
             <p>
               We need your unique ID to display that, but that is not available at signup. Please
               {` `}
-              <button type="button" onClick={resetTokens} className="underline text-blue-500">
+              <button type="button" onClick={logout} className="underline text-blue-500">
                 logout and login back again
               </button>
               .

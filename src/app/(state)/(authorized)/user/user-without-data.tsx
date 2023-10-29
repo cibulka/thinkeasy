@@ -1,12 +1,10 @@
 import Link from 'next/link';
 
 import { URL_APP_STATIC } from '@/constants/app';
-import { useResetTokens } from '@/recoil/utils';
+import { useLogout } from '@/recoil/utils';
 
 export function UserWithoutData() {
-  const resetTokens = useResetTokens();
-
-  function 
+  const logout = useLogout();
 
   return (
     <div className="flex flex-col gap-4">
@@ -19,7 +17,7 @@ export function UserWithoutData() {
       </p>
       <h2 className="text-xl font-bold">What to do about this?</h2>
       <p>
-        <button type="button" onClick={resetTokens} className="underline text-blue-500">
+        <button type="button" onClick={logout} className="underline text-blue-500">
           Logout from your account
         </button>{' '}
         and login again, you will se your user data back where it was.
@@ -31,7 +29,6 @@ export function UserWithoutData() {
         <code>POST /auth/refresh-token</code>, which unfortunately returns no data about the current
         user.
       </p>
-      
     </div>
   );
 }

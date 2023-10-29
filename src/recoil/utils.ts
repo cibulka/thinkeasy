@@ -17,3 +17,11 @@ export function useResetTokens() {
     resetTokens();
   };
 }
+
+export function useLogout() {
+  const resetTokens = useResetTokens();
+  return () => {
+    resetTokens();
+    if (window.location) window.location.reload();
+  };
+}
