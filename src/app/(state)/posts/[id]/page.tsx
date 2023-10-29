@@ -6,6 +6,8 @@ import { PostListItemFooter } from '@/components/post-list-item-footer/PostListI
 import { PostList } from '@/components/post-list/PostList';
 import { STATE } from '@/constants/common';
 
+export const revalidate = 60;
+
 export default async function PagePost(props: { params: { id: string } }) {
   const { id } = props.params;
   const { data: posts } = await postsControllerGetAllPosts();

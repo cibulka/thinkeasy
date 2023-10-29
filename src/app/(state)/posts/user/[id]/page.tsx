@@ -3,6 +3,8 @@ import { PostList } from '@/components/post-list/PostList';
 import { STATE } from '@/constants/common';
 import { postsControllerGetAllPosts } from '@/orval/api';
 
+export const revalidate = 60;
+
 export default async function PageUser(props: { params: { id: string } }) {
   const { id } = props.params;
   const { data: posts } = await postsControllerGetAllPosts();

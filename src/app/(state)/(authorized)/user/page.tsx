@@ -7,6 +7,8 @@ import { atomUser } from '@/recoil/atom';
 import { UserWithData } from './user';
 import { UserWithoutData } from './user-without-data';
 
+export const revalidate = 60;
+
 export default function PageUser() {
   const user = useRecoilValue(atomUser);
 

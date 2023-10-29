@@ -1,6 +1,7 @@
+import Link from 'next/link';
+
 import { URL_APP_STATIC } from '@/constants/app';
 import { useResetTokens } from '@/recoil/utils';
-import Link from 'next/link';
 
 export function UserWithoutData() {
   const resetTokens = useResetTokens();

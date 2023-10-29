@@ -3,6 +3,8 @@ import { LayoutPage } from '@/components/layout-page/LayoutPage';
 import { PostResponse, postsControllerGetAllPosts } from '@/orval/api';
 import { Author } from '@/types/app';
 
+export const revalidate = 60;
+
 function postsToAuthors(posts: PostResponse[]) {
   let result: Author[] = [];
   posts.forEach((post) => {
