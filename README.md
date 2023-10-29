@@ -30,7 +30,8 @@ Testing assingment for Thinkeasy that I've finished in 2 days. I wanted to work 
 
 Checkout the demo on [thinkeasy.cibulka.codes](https://thinkeasy.cibulka.codes).
 
-## The assingment (copy-pasted from the brief)
+<details>
+  <summary><strong>Read the assingment as given by ThinkEasy</strong></summary>
 
 Please finish it in 7 days: Your task is to write a full-fledged mini application which will include 2 parts.
 
@@ -77,6 +78,8 @@ You can use anything you like, but here is a list of what we prefer
 
 **Note**: I did not feel the need to use any specific UI library, hence no usage of Chakra.
 
+</details>
+
 ## 📦  Features
 
 - Fully responsive and optimized for touch screens
@@ -89,7 +92,7 @@ You can use anything you like, but here is a list of what we prefer
 
 ## 🖥️ Screens
 
-- Searchable list of posts: [thinkeasy.cibulka.codes](https://thinkeasy.cibulka.codes)
+- Searchable list of posts: [/](https://thinkeasy.cibulka.codes)
 - List of authors (with possibility to open a page of posts of each of them): [/posts/user](https://thinkeasy.cibulka.codes)
 - Login page: [/login](https://thinkeasy.cibulka.codes/login)
 - Signup page: [/signup](https://thinkeasy.cibulka.codes/signup)
@@ -108,14 +111,26 @@ npm run build && npm start # For production preview
 
 ## ➕  Room for improvements
 
-## Post editing
+### Post editing
 
 Brief asks for notification on "post editing". I can not see any post editing endpoint on Swagger however.
 
-## User info can not be retrieved outside of login
+### User info can not be retrieved outside of login
 
 Because of this I can not show user info on [profile page](https://thinkeasy.cibulka.codes/user) when user refreshes the page (and is logged in with `refreshToken` stored in their session storage).
 
-## User info is missing in Signup response (however is present in Login response)
+### User info is missing in Signup response (however is present in Login response)
 
 I can recreate the user info from submitted data during signup, however I do not have their ID. For this reason I can show their posts only after 2nd login.
+
+### In login response, BE sends the hashed password of the user
+
+I don't think that should happen.
+
+## 👨‍💻 More about me
+
+Visit my site on [www.cibulka.codes](https://www.cibulka.codes) or [download my resumé](https://www.cibulka.codes/en/cv.pdf).
+
+🎮 [You can also play some Tetris](https://www.cibulka.codes/tetris)! If curious about the details, visit the open source repo on [github.com/cibulka/react-tetris-ts](https://github.com/cibulka/react-tetris-ts).
+
+Thank you, this assingment was fun!

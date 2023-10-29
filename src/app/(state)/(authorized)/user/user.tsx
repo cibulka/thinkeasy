@@ -71,9 +71,10 @@ export function UserWithData(props: { user: User | UserAfterSignup }) {
         {userId ? (
           <PostList posts={posts} state={postsState} />
         ) : (
-          <div>
+          <div className="flex flex-col gap-4">
             <p>
               We need your unique ID to display that, but that is not available at signup. Please
+              {` `}
               <button type="button" onClick={resetTokens} className="underline text-blue-500">
                 logout and login back again
               </button>
